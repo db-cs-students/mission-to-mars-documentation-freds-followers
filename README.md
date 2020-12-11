@@ -7,10 +7,21 @@ What Does M.O.R.G.E stand for? - Mechanical Organic Rotating Giroscopic Entity
 ![Images of M.O.R.G.E.](MORGEmicroside.jpg)
 ![Images of M.O.R.G.E.](MORGEconnectionside.jpg)
 ![Images of M.O.R.G.E.](MORGEmicro_out.jpg)
-Reciver Code:
+
 ```python
 radio.set_group(99)
 def on_received_value(name, value):
     serial.write_value(name, value)
 radio.on_received_value(on_received_value)
 ```
+
+```python
+radio.set_group(99)
+def on_forever():
+    radio.send_value("x", input.acceleration(Dimension.X))
+    radio.send_value("y", input.acceleration(Dimension.Y))
+    radio.send_value("z", input.acceleration(Dimension.Z))
+    pause(50)
+basic.forever(on_forever)
+```
+##
