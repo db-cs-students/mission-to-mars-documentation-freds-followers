@@ -24,4 +24,7 @@ def on_forever():
     pause(50)
 basic.forever(on_forever)
 ```
-##
+# Team Contubitions
+Michael W - Made code, models, and typed for documentation
+Chandler V - Created the team name and Sensor Payloads name, typed for documentation
+Adian _ -
